@@ -1,6 +1,7 @@
 import bgImage from "../meals.jpg";
 import Menu from "./Menu";
 import Cart from "./Cart";
+import { useState } from "react";
 
 const DUMMY_MEALS = [
     {
@@ -30,7 +31,10 @@ const DUMMY_MEALS = [
   ];
 
 
-export default function Main() {
+export default function Main(props) {
+  const [cartItems, setCartItem] = useState([]);
+  console.log(cartItems)
+    
     return(
         <main>
             <div className="w-full relative mb-[7rem]">
@@ -45,10 +49,10 @@ export default function Main() {
             </div>
             <div className="bg-white mx-auto w-[55%] rounded-lg px-10 py-8">
                {DUMMY_MEALS.map((meals, index) => 
-                <Menu meals={meals} key={index}/>
+                <Menu meals={meals}  key={index} cartItems={cartItems} setCartItem={setCartItem}/>
                )}
             </div>
-            <Cart/>
+            <Cart openCart={props.openCart} setOpenCart={props.setOpenCart} cartItems={cartItems}/>
         </main>
     )
 }

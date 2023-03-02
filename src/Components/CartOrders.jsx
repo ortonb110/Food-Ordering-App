@@ -1,12 +1,12 @@
 
 
-export default function CartOders() {
+export default function CartOrders(props) {
     return (
         <div className="flex justify-between pb-8 border-b-2 border-red-700 items-center mb-5">
             <div>
-                <h3 className="capitalize font-bold tracking-wide mb-3">Sushi</h3> 
+                <h3 className="capitalize font-bold tracking-wide mb-3">{props.cartMenuList.name}</h3> 
                 <div className="flex gap-10">
-                    <p className="text-orange-500 font-bold text-[1.3rem]"><span>$</span>22</p>
+                    <p className="text-orange-500 font-bold text-[1.3rem]"><span>$</span>{props.cartMenuList.price}</p>
                     <span className="border-[1px] px-2 py-1 rounded-md font-bold "><span className="mr-1">x</span>1</span>
                 </div>
             </div>
