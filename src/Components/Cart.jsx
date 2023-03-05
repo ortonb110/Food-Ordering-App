@@ -32,7 +32,7 @@ export default function Cart(props) {
             <div className="">
                 <div className="flex justify-between mb-4 font-bold text-[1.5rem] capitalize">
                     <h2>total amount</h2>
-                    <p><span>$</span> 88.99</p>
+                    <p><span>$</span> {props.total}</p>
                 </div>
                 <div className="float-right">
                     <button className="border-red-900 border-[1px] font-bold px-8 py-1 rounded-2xl mr-4  text-red-900" onClick={openCartHandler}>Close</button>
