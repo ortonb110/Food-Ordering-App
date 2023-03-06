@@ -3,32 +3,7 @@ import Menu from "./Menu";
 import Cart from "./Cart";
 import { useState } from "react";
 
-const DUMMY_MEALS = [
-    {
-      id: 'm1',
-      name: 'Sushi',
-      description: 'Finest fish and veggies',
-      price: 22.99,
-    },
-    {
-      id: 'm2',
-      name: 'Schnitzel',
-      description: 'A german specialty!',
-      price: 16.5,
-    },
-    {
-      id: 'm3',
-      name: 'Barbecue Burger',
-      description: 'American, raw, meaty',
-      price: 12.99,
-    },
-    {
-      id: 'm4',
-      name: 'Green Bowl',
-      description: 'Healthy...and green...',
-      price: 18.99,
-    },
-  ];
+
 
 
 export default function Main(props) {
@@ -48,9 +23,11 @@ export default function Main(props) {
                 </div>
             </div>
             <div className="bg-white mx-auto w-[55%] rounded-lg px-10 py-8">
-               {DUMMY_MEALS.map((meals, index) => 
+             
+              {props.DUMMY_MEALS.map((meals, index) => 
                 <Menu meals={meals}  key={index} cartItems={cartItems} setCartItem={setCartItem}/>
                )}
+            
             </div>
             <Cart openCart={props.openCart} setOpenCart={props.setOpenCart} cartItems={cartItems}/>
         </main>

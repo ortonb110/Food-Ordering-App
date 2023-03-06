@@ -7,14 +7,6 @@ export default function Cart(props) {
     let cartMenuList = [];
 
 
-    useEffect(()=> {
-        let exist = Object.values(cartMenuList).includes(props.cartItems.name);
-        
-            cartMenuList.push(props.cartItems)
-        
-        console.log("Called from cart", cartMenuList)
-        return;
-    }, [props.cartItems])
 
     const openCartHandler = () => {
         props.setOpenCart(!props.openCart)

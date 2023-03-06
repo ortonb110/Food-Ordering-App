@@ -1,7 +1,13 @@
+import { useContext } from "react"
+import cartContext from "../Store/CartContext"
+
 
 
 export default function NavigationBar(props) {
-
+    const cartCtx = useContext(cartContext);
+    const numberOfCartItems = cartCtx.items.reduce((currentNumber, item) => {
+        return currentNumber + item.amount;
+    }, 0)
     const openCartHandler = () => {
         props.setOpenCart(!props.openCart)
     }
@@ -16,7 +22,7 @@ export default function NavigationBar(props) {
 
 
                 <span>your cart</span>
-                <span className="bg-red-600 px-3 rounded-full">2</span>
+                <span className="bg-red-600 px-3 rounded-full">{numberOfCartItems}</span>
             </div>
         </nav>
     )
